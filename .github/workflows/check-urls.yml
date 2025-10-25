@@ -90,7 +90,7 @@ jobs:
       - name: "Check URLs of file: ${{ matrix.file }}"
         run: |
           awesome_bot "${{ matrix.file }}" --allow-redirect --allow-dupe --allow-ssl || true;
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: ${{ steps.set-output.outputs.FILENAME}}
           path: ${{ github.workspace }}/ab-results-*.json
